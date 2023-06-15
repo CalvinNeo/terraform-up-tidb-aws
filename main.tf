@@ -161,7 +161,7 @@ resource "aws_instance" "tiflash" {
     delete_on_termination = true
     volume_type           = "gp3"
     iops                  = 12000
-    throughput            = 288
+    throughput            = 594
   }
 
   tags = {

@@ -118,7 +118,7 @@ resource "aws_instance" "tikv" {
   private_ip                  = "172.31.6.${count.index + 1}"
 
   root_block_device {
-    volume_size           = 1200
+    volume_size           = 800
     delete_on_termination = true
     volume_type           = "gp3"
     iops                  = 4000

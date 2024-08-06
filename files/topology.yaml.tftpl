@@ -6,8 +6,14 @@ global:
 server_configs:
   tidb: {}
   tikv: {}
-  pd: {}
-  tiflash: {}
+  pd:
+    schedule.max-merge-region-size: 500
+    schedule.max-merge-region-keys: 50000000
+  tiflash:
+    coprocessor.region-split-keys: 50000000
+    coprocessor.region-split-size: "500MiB"
+  tiflash-learner:
+    snap-generator-pool-size: 2
 
 tidb_servers:
   %{~ for host in tidb_hosts ~}

@@ -157,11 +157,11 @@ resource "aws_instance" "tiflash" {
   private_ip                  = "172.31.9.${count.index + 1}"
 
   root_block_device {
-    volume_size           = 1500
+    volume_size           = 1000
     delete_on_termination = true
     volume_type           = "gp3"
-    iops                  = 12000
-    throughput            = 594
+    iops                  = 4000
+    throughput            = 288
   }
 
   tags = {
